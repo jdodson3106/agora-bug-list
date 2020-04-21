@@ -1,33 +1,29 @@
+// variable to create a map of priority levels to compare
 let priorityMap = new Map([["LOW", 0], ["MEDIUM", 1], ["HIGH", 3]]);
 
+// funcion to get the value selected from the user
 function tableSortFilterClicked() {
     var sorttype = $("#sortSelect").val();
 
     if(sorttype == "id") {
-        console.log("Sorting by ID")
         sortColumn(0);
     }
     else if(sorttype == "title") {
-        console.log("Sorting by Title")
         sortColumn(1)
     }
     else if(sorttype == "date") {
-        console.log("Sorting by Date")
         sortColumn(2)
     }
     else if(sorttype == "severity") {
-        console.log("Sorting by Severity")
         sortColumn(3)
     }
     else if(sorttype == "priority") {
-        console.log("Sorting by Priority")
         sortColumn(4)
-    }
-    else {
-        console.log("No Filter selected")
     }
 }
 
+
+// sort the given column by its index
 function sortColumn(column) {
     var table, rows, switching, i, x, y, shouldSwitch;
     table = document.getElementById("bugTable");
@@ -38,6 +34,8 @@ function sortColumn(column) {
     while (switching) {
         // Start by saying: no switching is done:
         switching = false;
+
+        // get the rows from the table
         rows = table.rows;
 
         /* Loop through all table rows (except the
@@ -52,7 +50,9 @@ function sortColumn(column) {
             x = rows[i].getElementsByTagName("TD")[column];
             y = rows[i + 1].getElementsByTagName("TD")[column];
 
-            // Check if the two rows should switch place:
+            /* Based on the column working on, validate
+            whether the a switch should happen by comparing
+            the two columns x and y */
             switch (column) {
                 case 0 :
                     shouldSwitch = validateForId(x, y);
@@ -84,6 +84,11 @@ function sortColumn(column) {
     }
 }
 
+/**
+ * functions to sort columns based on column data type
+ */
+
+// id is sorted smallest to biggest (or oldest to newest)
 function validateForId(x, y) {
     if (Number(x.innerHTML) > Number(y.innerHTML)) {
         // If so, mark as a switch and break the loop:
@@ -92,6 +97,7 @@ function validateForId(x, y) {
     return false;
 }
 
+// title is sorted in alphabetical order
 function validateForTitle(x, y) {
     if(x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
         return true;
@@ -99,6 +105,7 @@ function validateForTitle(x, y) {
     return false;
 }
 
+// date is sorted by oldest to newest
 function validateForDate(x, y) {
     if(Date.parse(x.innerHTML) > Date.parse(y.innerHTML)) {
         return true;
@@ -106,6 +113,7 @@ function validateForDate(x, y) {
     return false;
 }
 
+// severity is sorted 1 -> 5 (most severe to least severe)
 function validateForSeverity(x, y) {
     if(Number(x.innerHTML) > Number(y.innerHTML)) {
         return true;
@@ -113,8 +121,8 @@ function validateForSeverity(x, y) {
     return false;
 }
 
+// priority is sorted from high to low
 function validateForPriority(x, y) {
-
     if(priorityMap.get(x.innerHTML) < priorityMap.get(y.innerHTML)) {
         return true;
     }
