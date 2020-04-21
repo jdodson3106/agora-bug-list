@@ -8,4 +8,5 @@ import java.util.List;
 public interface BugReportService {
     void parseCsvFile(MultipartFile file);
     List<Bug> getAllBugs();
+    List<Bug> getBugsSorted(String sortValue);
 }

@@ -20,7 +20,7 @@ public class Bug {
 
     @CsvBindByName(column = "Id")
     @Id
-    private long id;
+    private Long id;
 
     @CsvBindByName(column = "Title")
     private String title;
@@ -30,7 +30,7 @@ public class Bug {
     private Date createdDate;
 
     @CsvBindByName(column = "Severity")
-    private int severity;
+    private Integer severity;
 
     @CsvBindByName(column = "Priority")
     private String priority;
@@ -38,7 +38,7 @@ public class Bug {
     public Bug() {
     }
 
-    public Bug(long id, String title, String createdDate, int severity, String priority) throws ParseException {
+    public Bug(Long id, String title, String createdDate, Integer severity, String priority) throws ParseException {
         this.id = id;
         this.title = title;
         this.createdDateString = createdDate;
@@ -46,11 +46,11 @@ public class Bug {
         this.priority = priority;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -78,11 +78,11 @@ public class Bug {
         this.createdDate = createdDate;
     }
 
-    public int getSeverity() {
+    public Integer getSeverity() {
         return severity;
     }
 
-    public void setSeverity(int severity) {
+    public void setSeverity(Integer severity) {
         this.severity = severity;
     }
 
