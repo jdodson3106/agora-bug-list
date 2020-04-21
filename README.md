@@ -24,6 +24,7 @@ To sort by each column when requesting the JSON payload simply put in the column
 
 [https://fierce-savannah-21475.herokuapp.com/api/bugs?sortBy=title](https://fierce-savannah-21475.herokuapp.com/api/bugs?sortBy=title)
 
+
 <br/>
 ### Sort By Date
 
