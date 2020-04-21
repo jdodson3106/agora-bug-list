@@ -12,7 +12,7 @@ I also implemented a basic RESTful API for getting a JSON payload of all the act
 [https://fierce-savannah-21475.herokuapp.com/api/bugs](https://fierce-savannah-21475.herokuapp.com/api/bugs)<br/>
 or<br/>
 [https://fierce-savannah-21475.herokuapp.com/api/bugs?sortBy=id](https://fierce-savannah-21475.herokuapp.com/api/bugs?sortBy=id)
-<br/>
+<br/><br/>
 To sort by each column when requesting the JSON payload simply put in the column name you wish to sort by in the request parameter.
 
 <br/>
