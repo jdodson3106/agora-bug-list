@@ -1,5 +1,7 @@
 package com.agoradata.agora_bug_list.model.entity;
 
+import com.opencsv.bean.CsvBindByName;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.Date;
@@ -10,12 +12,32 @@ import java.sql.Date;
 
 @Entity
 public class Bug {
+    @CsvBindByName(column = "Id")
     @Id
     private long id;
+
+    @CsvBindByName(column = "Title")
     private String title;
+
+    @CsvBindByName(column = "Created")
     private Date createdDate;
+
+    @CsvBindByName(column = "Severity")
     private int severity;
+
+    @CsvBindByName(column = "Priority")
     private String priority;
+
+    public Bug() {
+    }
+
+    public Bug(long id, String title, Date createdDate, int severity, String priority) {
+        this.id = id;
+        this.title = title;
+        this.createdDate = createdDate;
+        this.severity = severity;
+        this.priority = priority;
+    }
 
     public long getId() {
         return id;

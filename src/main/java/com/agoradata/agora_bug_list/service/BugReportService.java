@@ -1,5 +1,7 @@
 package com.agoradata.agora_bug_list.service;
 
-public interface BugReportService {
+import org.springframework.web.multipart.MultipartFile;
 
+public interface BugReportService {
+    void parseCsvFile(MultipartFile file);
 }
