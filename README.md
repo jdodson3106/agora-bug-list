@@ -23,28 +23,22 @@ To sort by each column when requesting the JSON payload simply put in the column
 ### Sort By Title
 
 [https://fierce-savannah-21475.herokuapp.com/api/bugs?sortBy=title](https://fierce-savannah-21475.herokuapp.com/api/bugs?sortBy=title)
-
-
 <br/>
 ### Sort By Date
 
 [https://fierce-savannah-21475.herokuapp.com/api/bugs?sortBy=date](https://fierce-savannah-21475.herokuapp.com/api/bugs?sortBy=date)
-
 <br/>
 ### Sort By Severity
 
 [https://fierce-savannah-21475.herokuapp.com/api/bugs?sortBy=severity](https://fierce-savannah-21475.herokuapp.com/api/bugs?sortBy=severity)
-
 <br/>
 ### Sort By Priority
 
 [https://fierce-savannah-21475.herokuapp.com/api/bugs?sortBy=priority](https://fierce-savannah-21475.herokuapp.com/api/bugs?sortBy=priority)
-
 <hr/>
 # API Considerations
 If the request parameter is not valid the result will return an empty JSON object. <br/>
 The sorting of the JSON payload matches the table sorting scheme direct. For example, the severity will sort 1 -> 5 as 1 is the most severe as with the table.
-
 <hr/>
 # Notes
 I did not implement much validation with the exception of trying to submit an empty file. Aside from this the field will only accept .csv files. The basic operation of the application is matched with the basic requirements given and makes all the same assumptions that the data is properly formatted and the file uploaded will be an accurate file. In the event a non-vavlid or formatted file is uploaded the application may produce an error.
