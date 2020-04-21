@@ -3,6 +3,10 @@ package com.agoradata.agora_bug_list.service;
 import com.agoradata.agora_bug_list.model.repository.BugRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+/**
+ * BUG REPORT SERVICE TO HANDLE THE BUSINESS LOGIC AROUND CREATING BUGS,
+ * PARSING THE CSV FILE, AND GETTING ALL THE BUGS IN THE SYSTEM FOR DISPLAYING
+ **/
 
 @Service
 public class BugReportServiceImpl implements BugReportService{

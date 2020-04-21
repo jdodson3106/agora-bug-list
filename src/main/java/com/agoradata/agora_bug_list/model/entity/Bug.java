@@ -4,6 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.Date;
 
+/**
+ * BASIC POJO ENTITY FOR CREATING THE BUGS
+ **/
+
 @Entity
 public class Bug {
     @Id
