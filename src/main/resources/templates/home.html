@@ -5,13 +5,13 @@
     <title>Agora Data Bug Tracker</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <link rel="stylesheet" th:href="@{style.css}">
 </head>
 <body>
 
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand">Agora Data Bug Tracker</a>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formModal">
+    <button type="button" class="btn agora-color" data-toggle="modal" data-target="#formModal">
         Upload Bug File
     </button>
 </nav>
@@ -33,12 +33,33 @@
 
     <div th:if="${bugs.isEmpty()}">
         <div class="container">
-            <div class="jumbotron" align="center">
+            <div class="jumbotron agora-color" align="center">
                 <h1>Yay! <br/>No Bugs!</h1>
             </div>
         </div>
     </div>
     <div th:unless="${bugs.isEmpty()}">
+        <div class="container">
+            <div class="row justify-content-end">
+                <form class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label>Sort Table By: &nbsp;&nbsp; </label><br/>
+                        <select id="sortSelect" class="form-control" style="min-width: 200px">
+                            <option></option>
+                            <option value="id">ID</option>
+                            <option value="title">Title</option>
+                            <option value="date">Date</option>
+                            <option value="severity">Severity</option>
+                            <option value="priority">Priority</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn agora-color mb-2">Sort</button>
+                </form>
+            </div>
+
+        </div>
+        <br/>
+
         <table class="table table-striped ml-2 mr-2">
             <thead>
             <tr>
