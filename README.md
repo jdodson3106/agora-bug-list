@@ -7,6 +7,6 @@ The table sorting is handled with JavaScript so the table remains dynamic.
 
 # API Documentation
 I also implemented a basic RESTful API for getting a JSON payload of all the active bugs. The default payload is sorted by ID.
-[https://fierce-savannah-21475.herokuapp.com/api/bugs](https://fierce-savannah-21475.herokuapp.com/api/bugs)
-or
+[https://fierce-savannah-21475.herokuapp.com/api/bugs](https://fierce-savannah-21475.herokuapp.com/api/bugs)<br/>
+or<br/>
 [https://fierce-savannah-21475.herokuapp.com/api/bugs?sortBy=id](https://fierce-savannah-21475.herokuapp.com/api/bugs?sortBy=id)
