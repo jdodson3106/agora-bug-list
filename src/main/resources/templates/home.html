@@ -10,9 +10,9 @@
 <body>
 
 <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand">Navbar</a>
+    <a class="navbar-brand">Agora Data Bug Tracker</a>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formModal">
-        Launch demo modal
+        Upload Bug File
     </button>
 </nav>
 
@@ -40,26 +40,12 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <th scope="row">171846025</th>
-            <td>Bids/Proposals: shouldn't display Expired label for accepted items</td>
-            <td>3/17/2020</td>
-            <td>1</td>
-            <td>LOW</td>
-        </tr>
-        <tr>
-            <th scope="row">172213411</th>
-            <td>Bids: not applying filter based on proposal filter</td>
-            <td>4/7/2020</td>
-            <td>1</td>
-            <td>MEDIUM</td>
-        </tr>
-        <tr>
-            <th scope="row">172147251</th>
-            <td>LTV: negative values when Average Trade-in Value undefined</td>
-            <td>4/3/2020</td>
-            <td>2</td>
-            <td>HIGH</td>
+        <tr th:each="bug : ${bugs}">
+            <th scope="row" th:text="${bug.id}"></th>
+            <td th:text="${bug.title}"></td>
+            <td  th:text="${bug.createdDateString}"></td>
+            <td  th:text="${bug.severity}"></td>
+            <td th:text="${bug.priority}"></td>
         </tr>
         </tbody>
     </table>

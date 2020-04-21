@@ -39,6 +39,8 @@ public class HomeController {
         if(inputMessages != null) {
             model.addAttribute("error", inputMessages.get("ERROR"));
         }
+
+        model.addAttribute("bugs", bugReportService.getAllBugs());
         return "home";
     }
 
@@ -47,6 +49,8 @@ public class HomeController {
         if(file.isEmpty()) {
             log.error("No file uploaded");
             attributes.addFlashAttribute("ERROR", "Please select a CSV file to upload");
+        } else {
+            bugReportService.parseCsvFile(file);
         }
 
         return "redirect:/";

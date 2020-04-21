@@ -3,6 +3,8 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
 !**/src/test/**
+agora_bugs_list.csv
+agora_bug_list.iml
 
 ### STS ###
 .apt_generated
