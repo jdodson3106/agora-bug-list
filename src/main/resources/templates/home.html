@@ -26,30 +26,41 @@
             </button>
         </div>
     </div>
-
-
-    <h1>Active Bug List</h1>
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Title</th>
-            <th scope="col">Created Date</th>
-            <th scope="col">Severity</th>
-            <th scope="col">Priority</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="bug : ${bugs}">
-            <th scope="row" th:text="${bug.id}"></th>
-            <td th:text="${bug.title}"></td>
-            <td  th:text="${bug.createdDateString}"></td>
-            <td  th:text="${bug.severity}"></td>
-            <td th:text="${bug.priority}"></td>
-        </tr>
-        </tbody>
-    </table>
 </div>
+
+
+    <h1 class="ml-5 mb-5">Active Bug List</h1>
+
+    <div th:if="${bugs.isEmpty()}">
+        <div class="container">
+            <div class="jumbotron" align="center">
+                <h1>Yay! <br/>No Bugs!</h1>
+            </div>
+        </div>
+    </div>
+    <div th:unless="${bugs.isEmpty()}">
+        <table class="table table-striped ml-2 mr-2">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Created Date</th>
+                <th scope="col">Severity</th>
+                <th scope="col">Priority</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="bug : ${bugs}">
+                <th scope="row" th:text="${bug.id}"></th>
+                <td th:text="${bug.title}"></td>
+                <td  th:text="${bug.createdDateString}"></td>
+                <td  th:text="${bug.severity}"></td>
+                <td th:text="${bug.priority}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
 
 
 
